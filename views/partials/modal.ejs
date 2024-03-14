@@ -1,0 +1,63 @@
+<div id="controller" class="modal fade"
+  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- modal-header -->
+      <div class="modal-header">
+        <h5 id="controlLabel" class="modal-title text-teal"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <!-- modal-body -->
+      <div class="modal-body">
+        <form id="modal-form">
+          <div class="mb-3">
+            <label for="modal-name" class="form-label">Name</label>
+            <input type="text" name="name" id="modal-name" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="modal-age" class="form-label">Age</label>
+            <input type="number" name="age" id="modal-age" class="form-control"
+              min="0">
+          </div>
+          <div class="mb-3">
+            <label for="modal-birth" class="form-label">Birth</label>
+            <input type="date" name="birth" id="modal-birth" class="form-control">
+          </div>
+          <small id="modal-message" class="mb-3 text-center text-red-300"></small>
+        </form>
+      </div>
+      <!-- modal-footer -->
+      <div class="modal-footer">
+        <button id="btn1" type="button" class="btn btn-outline-teal"></button>
+        <button id="btn2" type="button" class="btn btn-outline-secondary">
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="errorMsg" class="modal fade"
+  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- modal-header -->
+      <div class="modal-header">
+        <h5 class="modal-title text-red">Oops!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <!-- modal-body -->
+      <div class="modal-body">
+        <p class="text-red-300">
+          The data has been deleted already, it no longer exists.
+        </p>
+      </div>
+      <!-- modal-footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-red" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

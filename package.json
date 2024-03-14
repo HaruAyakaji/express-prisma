@@ -1,0 +1,28 @@
+{
+  "name": "express-prisma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "prestart": "open-cli http://localhost:3000/",
+    "start": "nodemon app.js"
+  },
+  "author": "HaruAyakaji",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "^5.11.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "express-session": "^1.18.0",
+    "google-auth-library": "^9.6.3",
+    "http-errors": "^2.0.0",
+    "multer": "^1.4.5-lts.1",
+    "prisma": "^5.11.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "eslint": "^8.57.0"
+  }
+}

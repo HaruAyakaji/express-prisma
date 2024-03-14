@@ -1,0 +1,30 @@
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+
+    <% if (user) { %>
+    <a id="logo" class="navbar-brand d-inline-flex gap-2 cursor-pointer"
+      data-bs-toggle="popover" data-bs-placement="right"
+      data-bs-title="<%= user.email %>" data-bs-content="<%= user.sub %>">
+      <img src="<%= user.picture %>" alt="logo" width="32" class="rounded-circle">
+      <span><%= user.name %></span>
+    </a>
+    <form action="/auth/logout" method="post">
+      <button type="submit" class="btn btn-outline-teal">
+        <i class="bi bi-box-arrow-up-right"></i> Logout
+      </button>
+    </form>
+
+    <% } else { %>
+    <a class="navbar-brand d-inline-flex gap-2 cursor-pointer">
+      <i class="bi bi-snow"></i>
+      <span><%= title %></span>
+    </a>
+    <form action="/auth/login" method="post">
+      <button type="submit" class="btn btn-outline-teal">
+        <i class="bi bi-google"></i> Login by Google
+      </button>
+    </form>
+    <% } %>
+
+  </div>
+</nav>

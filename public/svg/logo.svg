@@ -1,0 +1,55 @@
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    svg {
+      fill: url('#linear');
+      stroke: orangered;
+      stroke-width: 5;
+      background-color: #1a1a1a;
+    }
+
+    text {
+      font-size: 1.5rem;
+      stroke-width: 1;
+    }
+
+    polygon,
+    polyline {
+      fill: none;
+      stroke: orange;
+      stroke-width: 2;
+    }
+  </style>
+
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="linear" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color: hsl(75, 100%, 50%);" />
+      <stop offset="100%" style="stop-color: springgreen;" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left -->
+  <rect x="50" y="50" width="50" height="200" />
+  <rect x="150" y="50" width="50" height="200" rx="25" ry="25" />
+  <circle cx="275" cy="75" r="25" />
+  <circle cx="275" cy="150" r="25" />
+  <circle cx="275" cy="225" r="25" />
+  <ellipse cx="375" cy="150" rx="25" ry="100" />
+
+  <!-- Right -->
+  <ellipse cx="525" cy="150" rx="25" ry="100" />
+  <circle cx="625" cy="75" r="25" />
+  <circle cx="625" cy="150" r="25" />
+  <circle cx="625" cy="225" r="25" />
+  <rect x="700" y="50" width="50" height="200" rx="25" ry="25" />
+  <rect x="800" y="50" width="50" height="200" />
+
+  <!-- Cross -->
+  <line x1="0" y1="150" x2="900" y2="150" />
+  <line x1="450" y1="0" x2="450" y2="300" />
+  <text x="725" y="285">HaruAyakaji</text>
+
+  <!-- Poly -->
+  <polygon points="0,225 225,0 900,75 675,300" />
+  <polyline points="15,15 300,285 600,15 875,285" />
+</svg>

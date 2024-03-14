@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model GoogleUser {
+  id             String      @id @default(uuid())
+  email          String      @unique
+  email_verified Boolean
+  family_name    String
+  given_name     String
+  locale         String
+  name           String
+  picture        String
+  sub            String
+  Character      Character[]
+
+  @@map("google_users")
+}
+
+model Character {
+  id           String     @id @default(uuid())
+  name         String     @unique
+  age          Int?
+  birth        DateTime?
+  createdAt    DateTime   @default(now())
+  googleUser   GoogleUser @relation(fields: [googleUserId], references: [id])
+  googleUserId String
+
+  @@map("characters")
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <%- include('./partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs') %>
+
+    <% if (user) { %>
+    <%- include('./partials/table.ejs') %>
+    <%- include('./partials/modal.ejs') %>
+    <button id="create" type="button">
+      <i class="bi bi-plus-lg"></i>
+    </button>
+
+    <% } else { %>
+    <object id="svgLogo" data="/svg/logo.svg"></object>
+    <% } %>
+
+  </body>
+</html>

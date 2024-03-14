@@ -1,0 +1,136 @@
+$enable-cssgrid: true;
+$grid-breakpoints: (
+  'xs': 0,
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  '2xl': 1536px,
+);
+$container-max-widths: (
+  'sm': 610px,
+  'md': 738px,
+  'lg': 974px,
+  'xl': 1200px,
+  '2xl': 1456px,
+);
+
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/variables-dark';
+
+$theme-colors: map-merge($theme-colors, $colors);
+
+@import '../../node_modules/bootstrap/scss/maps';
+@import '../../node_modules/bootstrap/scss/utilities';
+
+@function extend-colors($prop) {
+  @return map-merge(
+    map-get($utilities, $prop),
+    (
+      values:
+        map-merge-multiple(
+          map-get(map-get($utilities, $prop), 'values'),
+          $blues,
+          $indigos,
+          $purples,
+          $pinks,
+          $reds,
+          $oranges,
+          $yellows,
+          $greens,
+          $teals,
+          $cyans
+        ),
+    )
+  );
+}
+
+$utilities: map-merge-multiple(
+  $utilities,
+  (
+    'border-color': extend-colors('border-color'),
+  ),
+  (
+    'background-color': extend-colors('background-color'),
+  ),
+  (
+    'color': extend-colors('color'),
+  ),
+  (
+    'width':
+      map-merge(
+        map-get($utilities, 'width'),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'width'), 'values'),
+              (
+                80: 80%,
+                85: 85%,
+                90: 90%,
+              )
+            ),
+          responsive: true,
+        )
+      ),
+  ),
+  (
+    'cursor': (
+      property: cursor,
+      class: cursor,
+      values: (
+        pointer: pointer,
+      ),
+    ),
+  )
+);
+
+$table-variants: map-merge(
+  $table-variants,
+  (
+    'teal': shift-color($teal, $table-bg-scale),
+  )
+);
+
+$form-label-color: $teal-300;
+$input-focus-box-shadow: 0 0 0.625rem $teal;
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss'; // @5.3.3
+
+body {
+  background: url('/svg/logo-bg.svg') bottom / 51%;
+}
+
+#svgLogo {
+  @extend .position-fixed;
+  @extend .top-50;
+  @extend .start-50;
+  @extend .rounded-4;
+  @extend .border;
+  @extend .border-danger-subtle;
+  @extend .w-85;
+  @extend .w-sm-75;
+  animation: rotate 2s ease-in-out infinite;
+}
+
+#create {
+  @extend .btn;
+  @extend .btn-lg;
+  @extend .btn-outline-teal;
+  @extend .position-fixed;
+  @extend .rounded-circle;
+  bottom: 1rem;
+  right: 1rem;
+  aspect-ratio: 1 !important;
+}
+
+@keyframes rotate {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotateX(90deg);
+  }
+}
